@@ -18,7 +18,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Models
 User
-
+```md
 username
 
 String
@@ -37,3 +37,4 @@ Array of _id values referencing the Thought model
 friends
 
 Array of _id values referencing the User model (self-reference)
+```
