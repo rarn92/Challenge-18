@@ -17,8 +17,8 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ```
 
 ## Models
-User
 ```md
+User
 username
 
 String
