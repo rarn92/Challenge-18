@@ -11,26 +11,35 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: true,
+      default: Date.now,
     },
-    startDate: {
-      type: Date,
-      default: Date.now(),
+    username: {
+      type: String,
+      required: true
     },
-    endDate: {
-      type: Date,
-      // Sets a default value of 12 weeks from now
-      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-    },
-    students: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Student',
-      },
-    ],
+    // reactions: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'reactions',
+    //   },
+    //   reactionBody: {
+    //     type: String,
+    //     required: true,
+    //     maxlength: 280,
+    //   },
+    //   username: {
+    //     type: String,
+    //     required: true,
+    //   },
+    //   createdAt: {
+    //     type: Date,
+    //     default: Date.now,
+    //   },
+    // ],
   },
   {
     toJSON: {
-      virtuals: true,
+      getters: true,
     },
     id: false,
   }
